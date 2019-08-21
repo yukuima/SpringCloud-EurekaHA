@@ -1,0 +1,18 @@
+server:
+  port: 7002
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 1000
+    enable-self-preservation: false
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+        defaultZone: http://admin:js@eureka1:7001/eureka,http://admin:js@eureka2:7002/eureka,http://admin:js@eureka3:7003/eureka
+  instance:
+    hostname: eureka2
+spring:
+  security:
+    user:
+      name: admin
+      password: js
